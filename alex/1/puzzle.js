@@ -31,7 +31,7 @@ function trimToTopThree(set, n) {
 (async () => {
 
   let elfSet = [new Elf()];
-  await processLines('./input.txt', (line) => {
+  await processLines('../../input/1/input.txt', (line) => {
     if( line === '') {
       elfSet.push(new Elf());
     } else {
