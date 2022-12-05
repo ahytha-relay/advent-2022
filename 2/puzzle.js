@@ -38,9 +38,11 @@ function roundScoreP2(theirs, mine) {
     case 'A X': choice_score = 3; break;
     case 'A Y': choice_score = 1; break;
     case 'A Z': choice_score = 2; break;
+
     case 'B X': choice_score = 1; break;
     case 'B Y': choice_score = 2; break;
     case 'B Z': choice_score = 3; break;
+
     case 'C X': choice_score = 2; break;
     case 'C Y': choice_score = 3; break;
     case 'C Z': choice_score = 1; break;
