@@ -82,5 +82,4 @@ function scenicScore(h, x, y, map) {
   console.log(visibleCount);
   console.log(topSceneScore);
 
-
 })();
