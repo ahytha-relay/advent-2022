@@ -27,32 +27,6 @@ function neighbors(map, p) {
    .map(n => map[n]);
 }
 
-function updatePoint(map, p) {
-  let n_dist = neighbors(map, p)
-    .filter( n => n.dist !== undefined)
-    .filter( n => (n.height - p.height) < 2);
-  p.dist = Math.min(...n_dist) + 1;
-  p.checked = true;
-}
-
-// function propogateMinDist(map, x, y) {
-//   let self = map[[x, y]];
-//   self.checked = true;
-//   neighbors(map, x, y).map( n => {
-//     let is_accessible = (self.height - map[n].height) < 2;
-//     let is_defined = map[n].dist !== undefined;
-//     let is_further = map[n].dist > (self.dist + 1);
-
-//     if (is_accessible && !is_defined) {
-//       map[n].dist = self.dist + 1;
-//       propogateMinDist(map, ...n);
-//     } else if (is_accessible && is_defined && is_further) {
-//       map[n].dist = self.dist + 1;
-//       propogateMinDist(map, ...n);
-//     }
-//   });
-// }
-
 let imax = 0;
 let jmax = 0;
 function debug(map) {
@@ -96,7 +70,6 @@ function debug(map) {
     imax = Math.max(imax, i);
   });
 
-  // propogateMinDist(map, ...end);
   let set = neighbors(map, map[end]).map( n => [n, 1]);
   let dist = 0;
   while( set.length > 0 ) {
